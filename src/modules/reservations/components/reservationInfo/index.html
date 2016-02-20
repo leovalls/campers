@@ -1,0 +1,53 @@
+<div class=" fx-fade-down fx-dur-500 fx-ease-none fx-stagger-500">
+	<div ng-if="reservation.available===true"
+	     class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-sm-8">
+					<h4 class="text-muted">{{reservation.partyTime}} PM</h4>
+				</div>
+				<div class="col-sm-4 ">
+					<a href="#"
+					   ng-click="vm.showEditReservation(reservation)"
+					   class="btn btn-primary pull-right">
+						<i class="fa fa-plus"> Reserve</i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="card"
+     ng-if="reservation.available!==true">
+	<div class="card-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<h4 class="text-muted">{{::reservation.partyTime}} PM</h4>
+				<h4>
+					<i class="fa fa-users"></i> {{reservation.partyQuantity}} </h4>
+			</div>
+			<div class="col-sm-7">
+				<h4 ng-class="{ 'fulfilled-reservation text-muted':reservation.partyIsPresent }">
+					{{reservation.partyName}}</h4>
+				<small><i class="fa fa-phone"></i> {{reservation.partyPhone|phone}}</small>
+			</div>
+			<div class="col-sm-2 fx-fade-down fx-dur-600 fx-ease-none"
+			     ng-if="reservation.partyIsPresent===true">
+				<i class="fa fa-check text-success pull-right fa-3x"></i>
+			</div>
+		</div>
+	</div>
+	<div class="card-action">
+		<a href="#"
+		   ng-click="vm.showEditReservation(reservation)">Edit
+		</a>
+		<div class="checkbox pull-right">
+			<label>
+				<input type="checkbox"
+				       ng-model="reservation.partyIsPresent"
+				       ng-checked="reservation.partyIsPresent===true"
+				       ng-click="vm.activateReservation(reservation);">
+				It's here
+			</label>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+export class TopbarController {
+
+	constructor() {
+	}
+
+}

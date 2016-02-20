@@ -1,0 +1,79 @@
+<div class="modal-header">
+	<h3 class="modal-title">Reservation</h3>
+		<span class="text-muted"><strong>{{::vm.currentReservation.partyDate|date:'mediumDate'}} at
+		                                 {{::vm.currentReservation.partyTime}} PM</strong></span>
+</div>
+<div class="modal-body">
+	<form name="editReservation">
+		<div class="form-group">
+			<label for="partyName"><i class="fa fa-user"></i> Name</label>
+			<input type="text"
+			       class="form-control"
+			       required
+			       maxlength="100"
+			       id="partyName"
+			       ng-model="vm.currentReservation.partyName"
+			       placeholder="Name">
+		</div>
+		<div class="form-group">
+			<label for="partyPhone"><i class="fa fa-phone"></i> Phone Number</label>
+			<input class="form-control"
+			       required
+			       ng-model="vm.currentReservation.partyPhone"
+			       type="text"
+			       name="partyPhone"
+			       id="partyPhone"
+			       ui-mask="(999) 999-9999"
+			       ui-mask-placeholder
+			       ui-mask-placeholder-char="_" />
+		</div>
+		<div class="form-group">
+			<label for="partyQuantity"
+			       class="control-label"><i class="fa fa-users"></i> Party size
+			</label>
+			<div class="btn-group  "
+			     id="partyQuantity">
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="1">1
+				</label>
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="2">2
+				</label>
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="3">3
+				</label>
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="4">4
+				</label>
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="5">5
+				</label>
+				<label class="btn btn-primary"
+				       ng-model="vm.currentReservation.partyQuantity"
+				       uib-btn-radio="6">6
+				</label>
+			</div>
+		</div>
+	</form>
+	<div class="modal-footer">
+		<div class="pull-left"
+		     ng-if="vm.currentReservation.available===false">
+			<button class="btn btn-danger"
+			        ng-click="vm.removeReservation($close)"><i class="fa fa-remove" /> Remove
+			</button>
+		</div>
+		<button class="btn btn-default"
+		        ng-click="vm.cancelEdit($dismiss)">Cancel
+		</button>
+		<button class="btn btn-primary btn-lg"
+		        ng-click="vm.updateReservation($close)"
+		        ng-disabled="editReservation.$invalid">Save
+		</button>
+
+	</div>
+</div>

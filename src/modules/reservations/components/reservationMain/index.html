@@ -1,0 +1,8 @@
+<h4>Reservations for {{mainVm.selectedDate|date:'mediumDate'}}
+	<small class="pull-right"><em class="text-muted">({{mainVm.availableReservations}}) Available</em></small>
+</h4>
+<div ng-repeat="reservation in mainVm.reservations track by $index">
+	<reservation-info></reservation-info>
+</div>
+
+

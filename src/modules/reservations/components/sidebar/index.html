@@ -1,0 +1,40 @@
+<div>
+	<h3>Reservations</h3>
+	<div class="row">
+		<uib-datepicker ng-model="vm.selectedDate"
+		                min-date="vm.minDate"
+		                init-date="vm.minDate"
+		                show-weeks="false"
+		                ng-click="vm.setSelectedDate()"></uib-datepicker>
+	</div>
+	<hr>
+	<h4 class="lead">Featured this month</h4>
+	<div class="card-block">
+		<h5><i class="fa fa-beer"></i>
+			<span>Local Beers</span>
+		</h5>
+		<div class="row">
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						<li ng-repeat="beer in ::vm.featureItems.beers"
+						    class="fx-fade-down fx-easing-bounce fx-speed-1100">{{beer.name}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card-block">
+		<h5><i class="fa fa-cutlery"></i>
+			<span>Chef's suggestion</span>
+		</h5>
+		<div class="list-group row card">
+			<div class="list-group-item"
+			     ng-repeat="suggestion in vm.featureItems.suggestions">
+				<h6 class="list-group-item-heading">{{suggestion.name}}</h6>
+				<p class="list-group-item-text">{{suggestion.description}}</p>
+			</div>
+		</div>
+	</div>
+</div>
