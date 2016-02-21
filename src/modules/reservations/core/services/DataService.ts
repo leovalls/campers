@@ -21,7 +21,6 @@ export class DataService implements IDataService {
 	updateReservation(reservation:Reservation):Array<Reservation> {
 		var index = _.findIndex(this.reservations, {partyId: reservation.partyId});
 		this.reservations.splice(index, 1, reservation);
-		debugger;
 		this.localStorageService.set(this.getGroupKey(reservation.partyDate), JSON.stringify(this.reservations));
 		return this.reservations;
 	}

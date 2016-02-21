@@ -25,14 +25,20 @@ This is a proof of concept for a restaurant's table reservation app.
 
 
 
- 
- 
+
+
 
 Installation
 ------------
     $ git clone https://github.com/rafael-ochoa/campers.git
     $ cd  campers
     $ npm install
+
+    
+
+After this process, application will be available at [http://localhost:5000](http://localhost:5000)
+
+
 
 **Application Concept**
 
@@ -46,22 +52,24 @@ Installation
 
 **Considerations**
 
- - The User is logged in. 
- - One party at the time. 
- - Reservations are every hour. Accepted between 1:00 pm - 8:00 pm. 
- - Future version will include: 
+ - The User is logged in.
+ - One party at the time.
+ - Reservations are every hour. Accepted between 1:00 pm - 8:00 pm.
+ - Future version will include:
 	 - User's Reservations.
 	 - Description of especial requests.
 	 - History of Reservations.
 	 - Possibility to filter is possible by party's name and phone
    on a specific date.
- 
 
-   
+
+
 
 ----------
+Created by [@rafaelochoa](http://rafaelochoa.com)
+
+
 **License**
-MIT © [@rafaelochoa](http://rafaelochoa.com)
 
 
 The MIT License (MIT)
@@ -85,4 +93,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-

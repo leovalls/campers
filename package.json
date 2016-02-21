@@ -8,7 +8,7 @@
     "dev": "node index.js",
     "predev": "webpack --config webpack/webpack.dev.js --watch --NODE_ENV=dev",
     "prestart": "webpack --config webpack/webpack.build.js --NODE_ENV=production",
-    "postinstall": "npm start"
+    "postinstall": "typings install && npm start"
   },
   "author": "Rafael Ochoa <email@rafaelochoa.com>",
   "keywords": [
